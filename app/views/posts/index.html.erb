@@ -1,4 +1,5 @@
 これはpostのindexです
+<%# ヘッダー部分のサインインアウトの表示分岐 %>
 <% if user_signed_in? %>
       <li><%= link_to current_user.name, new_user_session_path, class: "user-name"  %></li>
       <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "logout"  %></li>
@@ -6,10 +7,15 @@
       <li><%= link_to 'ログイン', new_user_session_path, class: "login" %></li>
       <li><%= link_to '新規登録', new_user_registration_path, class: "sign-up" %></li>
 <% end %>
+<%# ヘッダー部分のサインインアウトの表示分岐 %>
+
+<%# 一覧表示 %>
 <% @posts.each do |post| %>
     <div class="content_post">
+      <%= post.user.name %>
       <%= post.title %>
       <%= post.detail %>
       <br>
     </div>
-  <% end %>
+<% end %>
+<%# 一覧表示 %>
