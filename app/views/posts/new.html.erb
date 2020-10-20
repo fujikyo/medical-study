@@ -1,7 +1,7 @@
 post新規投稿ページ
 
 <%= form_with(model: @post, local: true) do |post| %>
-      <%= post.text_field :title, placeholder: "タイトル" %>
-      <%= post.text_area :detail, placeholder: "内容" %>
-      <%= post.submit "SEND" %>
+    <%= post.text_field :title, placeholder: "タイトル" %>
+    <%= post.text_area :detail, placeholder: "内容" %>
+    <%= post.submit "SEND" %>
 <% end %>

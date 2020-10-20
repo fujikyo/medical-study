@@ -11,11 +11,11 @@
 
 <%# 一覧表示 %>
 <% @posts.each do |post| %>
-    <div class="content_post">
       <%= post.user.name %>
       <%= post.title %>
       <%= post.detail %>
+      <%= link_to "詳細", post_path(post.id), method: :get %>
+
       <br>
-    </div>
 <% end %>
 <%# 一覧表示 %>
