@@ -1,0 +1,9 @@
+これはpostのindexです
+
+<% @posts.each do |post| %>
+    <div class="content_post">
+      <%= post.title %>
+      <%= post.detail %>
+      <br>
+    </div>
+  <% end %>
