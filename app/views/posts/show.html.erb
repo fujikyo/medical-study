@@ -1,0 +1,25 @@
+showページ
+<%= @post.title %>
+<%= @post.detail %>
+<%= link_to '削除', "/posts/#{@post.id}", method: :delete %>
+<%= link_to '編集', edit_post_path(@post.id), method: :get %>
+
+
+<% if current_user %>
+  <%= form_with(model: [@post, @comment], local: true) do |form| %>
+    <%= form.text_area :content, placeholder: "質問等を入力", rows: "2" %>
+    <%= form.submit "SEND" %>
+  <% end %>
+<% else %>
+    コメントにはサインインが必要です。
+<% end %>
+
+<h3>＜コメント一覧＞</h3>
+<% if @comments %>
+  <% @comments.each do |comment| %>
+    <p>
+      <%= comment.user.name %>
+      <%= comment.content %>
+    </p>
+  <% end %>
+<% end %>
