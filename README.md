@@ -22,10 +22,9 @@ Ruby on Rails,html,css
 | email                     | string  | null: false |
 | password                  | string  | null: false |
 | name                      | string  | null: false |
-| specialize_id(activehash) | integer | null: false |
-| part_id(activehash)       | integer | null: false |
+| specialize                | integer | null: false |
 | experience                | integer | null: false |
-| word                      | string  | null: false |
+| word                      | text    | null: false |
 
 
 ### Association
@@ -50,7 +49,7 @@ Ruby on Rails,html,css
 
 | Column                       | Type       | Options                        |
 | ---------------------------- | ---------- | ------------------------------ |
-| contents                     | text       | null: false                    |
+| content                      | text       | null: false                    |
 | user                         | references | null: false, foreign_key: true |
 | post                         | references | null: false, foreign_key: true |
 
