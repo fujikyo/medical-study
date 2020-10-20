@@ -1,4 +1,7 @@
 class PostsController < ApplicationController
+  before_action :before_post, only:  [:show,:destroy,:edit,:update]
+  before_action :move_to_index, except: [:index, :show]
+
   def index
     @posts = Post.all
   end
@@ -12,22 +15,19 @@ class PostsController < ApplicationController
   end
 
   def show
-    @post = Post.find(params[:id])
     @comment = Comment.new
     @comments = @post.comment.includes(:user)
   end
 
   def destroy
-    @post = Post.find(params[:id])
     @post.destroy
   end
 
   def edit
-    @post = Post.find(params[:id])
   end
 
   def update
-    @post = Post.find(params[:id])
+    
     @post.update(post_params)
   end
 
@@ -37,4 +37,11 @@ class PostsController < ApplicationController
     params.require(:post).permit(:title,:detail).merge(user_id: current_user.id)
   end
 
+  def before_post
+    @post = Post.find(params[:id])
+  end
+
+  def move_to_index
+    redirect_to action: :index unless user_signed_in?
+  end
 end
