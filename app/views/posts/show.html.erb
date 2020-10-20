@@ -2,4 +2,6 @@ showページ
 <%= @post.title %>
 <%= @post.detail %>
 <%= link_to '削除', "/posts/#{@post.id}", method: :delete %>
+<%= link_to '編集', edit_post_path(@post.id), method: :get %>
+
 
