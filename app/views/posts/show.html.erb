@@ -1,4 +1,5 @@
 showページ
+<%= image_tag @post.image.variant(resize:'100x100'), class: 'message-image' if @post.image.attached?%>
 <%= @post.title %>
 <%= @post.detail %>
 <%= link_to '削除', "/posts/#{@post.id}", method: :delete %>
@@ -18,8 +19,8 @@ showページ
 <% if @comments %>
   <% @comments.each do |comment| %>
     <p>
-      <%= comment.user.name %>
-      <%= comment.content %>
+    <%= comment.user.name %>
+    <%= comment.content %>
     </p>
   <% end %>
 <% end %>
