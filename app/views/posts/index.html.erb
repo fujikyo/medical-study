@@ -1,13 +1,4 @@
 これはpostのindexです
-<%# ヘッダー部分のサインインアウトの表示分岐 %>
-<% if user_signed_in? %>
-      <li><%= link_to current_user.name, new_user_session_path, class: "user-name"  %></li>
-      <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "logout"  %></li>
-    <% else %>
-      <li><%= link_to 'ログイン', new_user_session_path, class: "login" %></li>
-      <li><%= link_to '新規登録', new_user_registration_path, class: "sign-up" %></li>
-<% end %>
-<%# ヘッダー部分のサインインアウトの表示分岐 %>
 <h1>
   <%= link_to '投稿する', new_post_path, method: :get %>
 </h1>

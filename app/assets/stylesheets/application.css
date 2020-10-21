@@ -14,7 +14,7 @@
  *= require_self
  */
 
-/* reset css */
+/* reset css開始 */
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -40,7 +40,8 @@ footer, header, hgroup, menu, nav, section {
 	display: block;
 }
 body {
-	line-height: 1;
+  line-height: 1;
+  background-color: #f8f8f8;
 }
 ol, ul {
 	list-style: none;
@@ -57,4 +58,79 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
-/* reset css */
+a {
+  text-decoration: none;
+}
+
+/* reset css終了 */
+
+/* header部分開始 */
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+header {
+  height: 150px;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+.main-side {
+  display: flex;
+  background-color: beige;
+}
+main {
+  width: 1000px;
+  margin: 0 auto;
+  min-height: 100vh;
+}
+
+.devise-links {
+  display: flex;
+  position: absolute;
+  right: 50px;
+  font-size: 30px;
+
+}
+
+.devise-links li {
+  margin-left: 20px;
+}
+
+.home-link {
+  font-size: 40px;
+  position: absolute;
+  left: 80px;
+}
+.login,.logout,.sign-up {
+  border: groove;
+}
+/* header部分終了 */
+
+/* fotter部分開始 */
+footer {
+  height: 200px;
+}
+
+.footer-home-link {
+  font-size: 35px;
+  display: block;
+  text-align:center;
+  margin: 20px 20px;
+}
+.footer-list {
+  display: flex;
+  justify-content: center;
+}
+.copyright {
+  text-align:center;
+  margin-top: 60px;
+}
+
+.footer-list li {
+  margin: 10px;
+  font-size: 20px;
+}
+/* fotter部分終了 */

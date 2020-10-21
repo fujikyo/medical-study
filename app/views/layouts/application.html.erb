@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>MedicalStudy</title>
+    <title>Medical Study</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -10,13 +10,31 @@
   </head>
 
   <body>
-    <header>header</header>
-    　<div>
-        <nav>left</nav>
-        <main>main</main>
-        <aside>aside</aside>
-      </div>
-    <%= yield %>
-    <footer>footer</footer>
+    <header>
+      <%= link_to "Medical Study","/", class: "home-link"%>
+      <ul class="devise-links" >
+        <% if user_signed_in? %>
+          <li class="signin-name"><%= current_user.name %></li>
+          <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "logout"  %></li>
+        <% else %>
+          <li><%= link_to 'ログイン', new_user_session_path, class: "login" %></li>
+          <li><%= link_to '新規登録', new_user_registration_path, class: "sign-up" %></li>
+        <% end %>
+      </ul>
+    </header>
+    <main>
+      <%= yield %>
+    </main>
+    <footer>
+      <%= link_to "Medical Study","/", class: "footer-home-link"%>
+      <ul class="footer-list">
+        <li><%= link_to "お問い合わせ","/"%></li>
+        <li><%= link_to "運営企業","/"%></li>
+        <li><%= link_to "利用規約","/"%></li>
+        <li><%= link_to "プライバシーポリシー","/"%></li>
+        <li><%= link_to "サイトマップ","/"%></li>
+      </ul>
+      <div class="copyright">Copyright © PT CORPORATION. All Rights Reserved.</div>
+    </footer>
   </body>
 </html>
