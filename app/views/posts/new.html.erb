@@ -1,11 +1,11 @@
-post新規投稿ページ
+<div class="new-post">新規投稿ページ</div>
 
 <%= form_with(model: @post, local: true) do |post| %>
 　<label class="form-image">
-    <span class="image-file">画像を選択する</span>
+    <span class="image-file">画像をここから選択する</span>
     <%= post.file_field :image, class: 'hidden' %>
 　</label>
-  <%= post.text_field :title, placeholder: "タイトル" %>
-  <%= post.text_area :detail, placeholder: "内容" %>
+  <div class="new-post-title"><%= post.text_field :title, placeholder: "タイトル" %></div>
+  <div class="new-post-detail"><%= post.text_area :detail, placeholder: "文章"%>
   <%= post.submit "SEND" %>
 <% end %>
