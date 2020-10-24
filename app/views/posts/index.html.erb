@@ -1,15 +1,18 @@
-これはpostのindexです
-<h1>
-  <%= link_to '投稿する', new_post_path, method: :get %>
-</h1>
 
-<%# 一覧表示 %>
-<% @posts.each do |post| %>
-<%= image_tag post.image.variant(resize:'100x100'), class: 'message-image' if post.image.attached?%>
-  <%= post.user.name %>
-  <%= post.title %>
-  <%= post.detail %>
-  <%= link_to "詳細", post_path(post.id), method: :get %>
-  <br>
+<div class="post-index">投稿一覧</div>
+
+  <div class="post-all">
+    <% @posts.each do |post| %>
+    <div class="post-top">
+      <div class="post-title"><%= post.title %></div>
+        <%= image_tag post.image.variant(resize:'200x200'), class: "post-image" if post.image.attached?%>
+        <div class="read-article"><%= link_to "記事を読む", post_path(post.id), method: :get %></div>
+    </div>
+    <% end %>
+  </div>
+<% if user_signed_in? %>
+<div class='post-btn'>
+  <%= link_to "投稿する",new_post_path, class: "post-btn-text"%>
+</div>
 <% end %>
-<%# 一覧表示 %>
+
