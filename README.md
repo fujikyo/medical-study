@@ -6,19 +6,19 @@ Medical Study
 医療関係者(理学療法士)が勉強内容を投稿し、シェアすることができるサービスを意識して作成しました。
 
 # 機能一覧
-・一覧表示
-・ログイン、ログアウト機能
-・記事投稿機能(画像含む)
-・削除機能
-・編集機能
-・コメント機能
+・一覧表示  
+・ログイン、ログアウト機能  
+・記事投稿機能(画像含む)  
+・削除機能  
+・編集機能  
+・コメント機能  
 ・検索機能
 
 # 開発環境
-・ruby on rails,ruby,html,css,JavaScript,mysql,AWS(S3)
+ruby on rails,ruby,html,css,JavaScript,mysql,AWS(S3)
 
 # その他
-・Rspecによるテスト導入。
+Rspecによるテスト導入。
 
 # テーブル設計
 
