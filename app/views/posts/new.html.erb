@@ -1,5 +1,5 @@
+<%= render "shared/header"%>
 <div class="new-post">新規投稿ページ</div>
-
 <%= form_with(model: @post, local: true) do |post| %>
 　<label class="form-image">
     <span class="image-file">画像をここから選択する</span>
@@ -9,3 +9,4 @@
   <div class="new-post-detail"><%= post.text_area :detail, placeholder: "文章"%>
   <%= post.submit "SEND" %>
 <% end %>
+<%= render "shared/footer" %>

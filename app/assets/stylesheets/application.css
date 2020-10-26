@@ -82,7 +82,7 @@ header {
   display: flex;
   background-color: beige;
 }
-main {
+.post-index {
   width: 1000px;
   margin: 0 auto;
   min-height: 100vh;
@@ -107,6 +107,11 @@ main {
 }
 .login,.logout,.sign-up {
   border: groove;
+}
+
+.user-home-link {
+  font-size: 40px;
+  margin: 0 auto;
 }
 /* header部分終了 */
 
