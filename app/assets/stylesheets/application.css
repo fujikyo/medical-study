@@ -164,6 +164,12 @@ footer {
 .input-default {
   margin: 40px;
 }
+.log-in-error {
+    text-align: center;
+    font-size: 30px;
+    color: red;
+    margin: 20px;
+}
 /* login */
 
 /* sign-up */
@@ -178,3 +184,12 @@ footer {
 }
 
 /* sign-up */
+
+/* エラー */
+.error-alert {
+  text-align: center;
+  font-size: 30px;
+  color: red;
+  margin: 20px;
+}
+/* エラー */

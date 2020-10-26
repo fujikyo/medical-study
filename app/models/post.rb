@@ -1,5 +1,5 @@
 class Post < ApplicationRecord
-validates :image, :title, :detail, presence: true
+validates :title, :detail, presence: true
 validates :title, length: { maximum: 25 }
 validates :detail, length: { maximum: 300}
 
