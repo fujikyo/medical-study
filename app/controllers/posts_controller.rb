@@ -26,14 +26,22 @@ class PostsController < ApplicationController
   end
 
   def destroy
-    @post.destroy
+    if @post.destroy
+      redirect_to :root
+    else
+      redirect_to item_path(@post.id)
+    end
   end
 
   def edit
   end
 
   def update
-    @post.update(post_params)
+    if @post.update(post_params)
+      redirect_to post_path(@post.id)
+    else
+      redirect_to edit_post_path(@post.id)
+    end
   end
 
   private
