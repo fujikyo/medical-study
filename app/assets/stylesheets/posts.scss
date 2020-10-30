@@ -4,19 +4,28 @@
 
 // index
 
-.post-all  {
-  display: flex;
-}
 .post-index {
-  text-align: center;
-  font-size: 30px;
-  margin: 40px;
+
 }
+.post-main {
+  font-size: 30px;
+  width: 1000px;
+  margin: 0 auto;
+}
+
+.post-wrapper  {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  
+}
+
 
 .post-top {
   width: 30%;
-  height: 30%;
-  box-sizing: border-box;
+  height: 400px;
 }
 
 .post-btn {
