@@ -1,7 +1,8 @@
-編集ページ
-
+<%= render "shared/header"%>
+編集画面
 <%= form_with(model: @post, local: true) do |post| %>
     <%= post.text_field :title, placeholder: "タイトル" %>
     <%= post.text_area :detail, placeholder: "内容" %>
     <%= post.submit "SEND" %>
 <% end %>
+<%= render "shared/footer" %>

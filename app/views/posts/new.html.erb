@@ -1,11 +1,13 @@
+<%= render "shared/header"%>
+<%= render 'shared/error_messages', model: @post %>
 <div class="new-post">新規投稿ページ</div>
-
 <%= form_with(model: @post, local: true) do |post| %>
 　<label class="form-image">
     <span class="image-file">画像をここから選択する</span>
     <%= post.file_field :image, class: 'hidden' %>
 　</label>
-  <div class="new-post-title"><%= post.text_field :title, placeholder: "タイトル" %></div>
-  <div class="new-post-detail"><%= post.text_area :detail, placeholder: "文章"%>
+  <div class="new-post-title"><%= post.text_field :title, placeholder: "タイトル25文字以内" %></div>
+  <div class="new-post-detail"><%= post.text_area :detail, placeholder: "文章300文字以内"%>
   <%= post.submit "SEND" %>
 <% end %>
+<%= render "shared/footer" %>

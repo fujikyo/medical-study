@@ -82,7 +82,7 @@ header {
   display: flex;
   background-color: beige;
 }
-main {
+.post-index {
   width: 1000px;
   margin: 0 auto;
   min-height: 100vh;
@@ -107,6 +107,11 @@ main {
 }
 .login,.logout,.sign-up {
   border: groove;
+}
+
+.user-home-link {
+  font-size: 40px;
+  margin: 0 auto;
 }
 /* header部分終了 */
 
@@ -159,6 +164,12 @@ footer {
 .input-default {
   margin: 40px;
 }
+.log-in-error {
+    text-align: center;
+    font-size: 30px;
+    color: red;
+    margin: 20px;
+}
 /* login */
 
 /* sign-up */
@@ -173,3 +184,12 @@ footer {
 }
 
 /* sign-up */
+
+/* エラー */
+.error-alert {
+  text-align: center;
+  font-size: 30px;
+  color: red;
+  margin: 20px;
+}
+/* エラー */

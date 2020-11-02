@@ -1,3 +1,4 @@
+<%= render "shared/header"%>
 <div class="show-title"><%= @post.title %></div>
 <div class="show-image"><%= image_tag @post.image.variant(resize:'500x750'), class: 'message-image' if @post.image.attached?%></div>
 <div class="show-detail"><%= @post.detail %></div>
@@ -19,8 +20,8 @@
       コメントにはサインインが必要です。
   <% end %>
 </div>
-
-<div class="comment-index">
+<%= render 'shared/error_messages', model: @comment %>
+<div class="comment-top">
   <div class="comment-header">＜コメント一覧＞</div>
   <div class="comment-index">
     <% if @comments %>
@@ -32,3 +33,4 @@
     <% end %>
   </div>
 </div>
+<%= render "shared/footer" %>

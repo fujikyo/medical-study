@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
   before_action :before_post, only:  [:show,:destroy,:edit,:update]
-  before_action :move_to_index, except: [:index, :show]
+  before_action :move_to_index, except: [:index, :show, :serch]
 
   def index
     @posts = Post.all
@@ -8,10 +8,16 @@ class PostsController < ApplicationController
 
   def new
     @post = Post.new
+    
   end
 
   def create
-    Post.create(post_params)
+    @post = Post.create(post_params)
+    if @post.save
+      redirect_to :root
+    else
+      render "new"
+    end
   end
 
   def show
@@ -20,15 +26,26 @@ class PostsController < ApplicationController
   end
 
   def destroy
-    @post.destroy
+    if @post.destroy
+      redirect_to :root
+    else
+      redirect_to item_path(@post.id)
+    end
   end
 
   def edit
   end
 
   def update
-    
-    @post.update(post_params)
+    if @post.update(post_params)
+      redirect_to post_path(@post.id)
+    else
+      redirect_to edit_post_path(@post.id)
+    end
+  end
+
+  def search
+    @posts = Post.search(params[:keyword])
   end
 
   private
