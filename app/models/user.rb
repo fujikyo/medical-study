@@ -13,4 +13,5 @@ class User < ApplicationRecord
 
   has_many :comment
   has_many :post, dependent: :destroy
+  has_many :post, through: :favorite
 end

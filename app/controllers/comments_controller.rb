@@ -4,6 +4,7 @@ class CommentsController < ApplicationController
     if @comment.save
       redirect_to "/posts/#{@comment.post.id}"
     else
+      # render template: "/posts/#{@comment.post.id}"
       redirect_to "/posts/#{@comment.post.id}"
     end
   end
